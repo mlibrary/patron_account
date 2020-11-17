@@ -20,7 +20,7 @@ spec:
           secretName: config-settings
       containers:
       - name: web
-        image: mlibrary/patron_account-web:0.0.1 #commit-hash
+        image: mlibrary/patron-account:0.0.1 #commit-hash
         ports:
         - containerPort: 4567
         env:
