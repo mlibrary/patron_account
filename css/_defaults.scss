@@ -8,6 +8,7 @@ body {
 
 a {
   color: var(--color-teal-400);
+  padding: 0.125rem 0; // closes the line height gap.
 
   &:hover {
     text-decoration-thickness: 2px;

@@ -132,7 +132,8 @@ body {
   /* Firefox */ }
 
 a {
-  color: var(--color-teal-400); }
+  color: var(--color-teal-400);
+  padding: 0.125rem 0; }
   a:hover {
     text-decoration-thickness: 2px; }
 
