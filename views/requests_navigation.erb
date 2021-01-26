@@ -1,0 +1,22 @@
+<% pages = [
+  {
+    label: 'U-M Library',
+    to: '/requests/um-library'
+  },
+  {
+    label: 'From Other Institutions',
+    to: '/requests/other-institutions'
+  },
+] %>
+
+<nav aria-label="Requests" class="local-navigation">
+  <ul>
+     <% pages.each do |page| %>
+        <li>
+          <a href="<%=page[:to]%>" class="<%= page[:to] == request.path_info ? 'active': '' %>">
+            <%=page[:label]%>
+          </a>
+        </li>
+      <% end %>
+  </ul>
+</nav>

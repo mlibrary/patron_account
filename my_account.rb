@@ -96,10 +96,25 @@ namespace '/shelf' do
   end
 end
 
-get '/requests' do
-  requests = Requests.for(uniqname: session[:uniqname]).holds
+namespace '/requests' do
+  get ''  do
+    redirect_to '/um-library' # Redirects to /requests/um-library
+  end
 
-  erb :requests, :locals => { requests: requests }
+  get '/'  do
+    redirect_to '/um-library' # Redirects to /requests/um-library
+  end
+
+  get '/um-library' do
+    requests = Requests.for(uniqname: session[:uniqname]).holds
+  
+    erb :requests, :locals => { requests: requests }
+  end
+  
+  get '/other-institutions' do
+  
+    erb :other_institutions, :locals => { other_institutions: [] }
+  end
 end
 
 get '/contact-information' do 

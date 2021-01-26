@@ -8,11 +8,11 @@
 
 <%# elsif %>
 
-<h2>U-M Library</h2>
+<h2>From Other Institutions</h2>
 
 <table>
   <caption>Showing <%#= requests.count %> items</caption>
-  <thead>
+    <thead>
     <tr>
       <th>Title & author</th>
 
@@ -21,20 +21,20 @@
     </tr>
   </thead>
   <tbody>
-    <% requests.each do |request| %>
+    <% #requests.each do |request| %>
       <tr>
         <td>
-          <a href="<%=request.search_url%>"><%= request.title %></a>
-          <span>&#183; <%= request.author %></span>
+          <a href="<%#=request.search_url%>"><%#= request.title %></a>
+          <span>&#183; <%#= request.author %></span>
         </td>
         <td style="min-width: 20%;">
-          <%= request.pickup_location %>
+          <%#= request.pickup_location %>
         </td>
         <td style="min-width: 20%;">
-          <%= request.request_date %>
+          <%#= request.request_date %>
         </td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
