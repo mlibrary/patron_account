@@ -4,4 +4,58 @@
 
 <h2>Document delivery</h2>
 
-[todo]
+<!--
+
+Renew all could be too slow. Maybe reconsider.
+
+<form action="todo:renew-all-monique-help!" method="post">
+  <input type="hidden" name="renew-all" value="" />
+  <button>Renew all</button>
+</form>
+-->
+
+<div class="table-container">
+<table>
+  <caption>Showing <strong><%#=loans.pagination.first%></strong> - <strong><%#=loans.pagination.last%></strong> of <strong><%#= loans.count %></strong> items</caption>
+  <thead>
+    <tr>
+      <th style="width: 7rem;">Request Type</th>
+      <th style="width: 7rem;">Number</th>
+      <th style="width: 66%;">Title & author</th>
+      <th style="width: 6rem;">Status</th>
+      <th style="width: 9rem;">Due date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# loans.each do |loan| %>
+      <tr>
+        <td>
+          Loan
+        </td>
+        <td>
+          0000000
+        </td> 
+        <td>
+          <a href="<%#=loan.search_url%>"><%#= loan.title %></a>
+          <span>&#183; <%#= loan.author %></span>
+        </td>
+        <td>
+          <%# if loan.renewable? %>
+          <form action="/renew-loan" method="post">
+            <input type="hidden" name="loan_id" value="<%#=loan.loan_id%>" />
+            <button class="button--light">Renew</button>
+          </form>
+          <%# else %>
+          <p>Not eligible for renewal</p>
+        <%# end %>
+        </td>
+        <td>
+          Dec 10, 2020
+        </td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+</div>
+
+<%#= erb :pagination, locals: {pagination: loans.pagination, count: loans.count} %>
