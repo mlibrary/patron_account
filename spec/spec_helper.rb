@@ -150,3 +150,15 @@ def stub_alma_put_request(url:, input:, output:, status: 200)
           'User-Agent'=>'Ruby'
       }).to_return(body: output, status: status, headers: {content_type: 'application/json'})   
 end
+
+def stub_illiad_get_request(url:, body: "{}",status: 200, query: {})
+  stub_request(:get, "#{ENV["ILLIAD_API_HOST"]}/webplatform/#{url}").with( 
+    headers: {   
+        accept: 'application/json', 
+        ApiKey: ENV['ALMA_API_KEY'],
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Ruby'
+    },
+    query: query,
+  ).to_return(body: body, status: status, headers: {content_type: 'application/json'})   
+end
