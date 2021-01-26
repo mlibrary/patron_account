@@ -44,10 +44,10 @@ describe "requests" do
       expect(last_response.body).to include("Document delivery")
     end
   end
-  context "get /requests" do
+  context "get /requests/um-library" do
     it "contains 'Requests'" do
       stub_alma_get_request(url: "users/tutor/requests")
-      get "/requests"
+      get "/requests/um-library"
       expect(last_response.body).to include("Requests")
     end
   end
