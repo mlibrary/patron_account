@@ -10,7 +10,7 @@ require_relative "./utility"
 require_relative "./models/pagination/pagination"
 require_relative "./models/pagination/pagination_decorator"
 require_relative "./models/alma_client"
-# require_relative "./models/illiad_client"
+require_relative "./models/illiad_client"
 require_relative "./models/nelnet.rb"
 require_relative "./models/fine_payer.rb"
 

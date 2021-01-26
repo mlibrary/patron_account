@@ -2,23 +2,15 @@ require 'httparty'
 
 class ILLiadClient
   include HTTParty
-  base_uri "#{ENV.fetch('ILLIAD_API_HOST')}/webplatform/SystemInfo/SecurePlatformVersion"
+  base_uri "#{ENV.fetch('ILLIAD_API_HOST')}/webplatform"
 
   def initialize()
-    self.class.headers 'Authorization' => "apikey #{ENV.fetch('ILLIAD_API_KEY')}"
+    self.class.headers 'ApiKey' => ENV.fetch('ILLIAD_API_KEY')
     self.class.headers 'Accept' => 'application/json'
   end
 
   def get(url, query={})
     self.class.get(url, query: query)
-  end
-  def post(url, query={})
-    self.class.post(url, query: query)
-  end
-
-  def put(url, body)
-    self.class.headers 'Content-Type' => 'application/json'
-    self.class.put(url, { body: body.to_json } )
   end
 
   def get_all(url:, record_key:, limit: 100, query: {})
