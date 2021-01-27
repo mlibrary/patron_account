@@ -23,7 +23,7 @@ edit .env/development/web with Alma Credentials. Leave the lines after ALMA_API_
 #.env/development/web
 ALMA_API_KEY='YOURAPIKEY'
 ALMA_API_HOST='https://api-na.hosted.exlibrisgroup.com'
-ILLIAD_API_KEY='2de82138-7c74-4b72-a381-1d48beaedaf0'
+ILLIAD_API_KEY='YOURAPIKEY'
 ILLIAD_API_HOST='https://ill.lib.umich.edu/webplatform/SystemInfo/SecurePlatformVersion'
 NELNET_SECRET_KEY = 'secretkey'
 NELNET_PAYMENT_URL = 'http://localhost:4444'
