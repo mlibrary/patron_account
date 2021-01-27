@@ -155,7 +155,7 @@ def stub_illiad_get_request(url:, body: "{}",status: 200, query: {})
   stub_request(:get, "#{ENV["ILLIAD_API_HOST"]}/webplatform/#{url}").with( 
     headers: {   
         accept: 'application/json', 
-        ApiKey: ENV['ALMA_API_KEY'],
+        ApiKey: ENV['ILLIAD_API_KEY'],
         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
         'User-Agent'=>'Ruby'
     },
