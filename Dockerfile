@@ -29,12 +29,14 @@ ENV BUNDLE_PATH /gems
 
 #Actually a secret
 ENV ALMA_API_KEY 'YOUR_ALMA_API_KEY'
+ENV ILLIAD_API_KEY 'YOUR_ILLIAD_API_KEY'
 ENV NELNET_SECRET_KEY 'YOUR_NELNET_SECRET_KEY'
 ENV NELNET_PAYMENT_URL  'https://example.com'
 ENV JWT_SECRET  'YOUR_JWT_SECRET'
 
 #Not that much of a secret
 ENV ALMA_API_HOST 'https://api-na.hosted.exlibrisgroup.com'
+ENV ILLIAD_API_HOST 'http://localhost'
 ENV PATRON_ACCOUNT_BASE_URL 'http://localhost'
 
 WORKDIR /app
