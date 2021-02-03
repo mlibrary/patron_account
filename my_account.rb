@@ -29,13 +29,22 @@ enable :sessions
 use OmniAuth::Builder do
   provider :openid_connect, {
     issuer: "https://dex.kubernetes.lib.umich.edu",
+    discovery: true,
+    client_auth_method: 'jwks',
+    scope: [:openid, :profile, :email],
     client_options: {
       identifier: 'patron-account-testing',
       secret: 'patronaccountdexsecret',
+      redirect_uri: 'http://localhost:4567/auth/openid_connect/callback'
     } 
   }
 end
 
+get '/auth/openid_connect/callback' do
+  auth = request.env['omniauth.auth']
+  info = auth[:info]
+  session[:uniqname] = info["uid"]
+end
 # :nocov:
 post '/session_switcher' do
   session[:uniqname] = params[:uniqname]
